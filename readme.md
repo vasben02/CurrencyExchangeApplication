@@ -1,13 +1,16 @@
 # Modular Currency Exchange Application
 
-A dynamic, console-based financial utility tool written in **Java** that allows users to perform real-time global currency conversions using dynamic external data inputs.
+A dynamic, console-based financial utility tool written in **Java** that allows users to perform real-time global currency conversions and query bulk exchange rate listings using dynamic external data inputs.
 
 ## Features
-- **Dynamic Live Rates:** Automatically fetches the latest, up-to-date foreign exchange rates.
-- **User-Centric Inputs:** Standardized input scanning (`VALUE FROM_CURRENCY TO_CURRENCY`) that accepts any global currency pair (e.g., `100 USD EUR`).
-- **Robust Parsing:** Built-in isolated algorithmic parsing routine using custom string manipulation (`indexOf` and `substring`).
-- **Input Resilience:** Handles case-insensitivity seamlessly (e.g., automatically converts `usd` to `USD`).
-- **Fault Tolerance:** Integrated `try-catch` structures to isolate potential runtime networking anomalies safely.
+- **Dual Mode Interface:** Offers two distinct functionalities based on user preference:
+    - **Currency Exchange:** Converts a specific amount from one currency to another.
+    - **Bulk Rates Listing:** Displays the entire global market catalog relative to a chosen base currency.
+- **Dynamic Live Rates:** Automatically fetches the latest, up-to-date foreign exchange rates from a live API.
+- **User-Centric Inputs:** Standardized input scanning that accepts any global currency pair via tickers (e.g., `100 USD EUR` or `HUF`).
+- **Robust Algorithmic Parsing:** Core string extraction routines utilize structured token isolating (`indexOf` and `substring`) to process raw data fields without heavy JSON library dependencies.
+- **Input Resilience & Case-Insensitivity:** Gracefully handles case variation (e.g., maps `usd` to `USD`) and sanitizes unintended whitespace.
+- **Focus & Fault Tolerance:** Integrated input guards and `try-catch` boundaries handle runtime networking anomalies, malformed queries, or console window focus losses seamlessly.
 
 ## Tech Stack
 - **Language:** Java 25 (Standard Edition)
@@ -17,4 +20,10 @@ A dynamic, console-based financial utility tool written in **Java** that allows 
 ## How to Run
 1. Clone the repository.
 2. Run the `Main` class.
-3. Input your desired amount and currency tickers when prompted. Example: `250.50 EUR HUF`
+3. Choose your desired action from the main menu by typing `exchange` or `rates`.
+
+### Execution Examples:
+- **For Exchange Mode:**
+  ```text
+  Enter mode: exchange
+  Input prompt: 250.50 EUR HUF
